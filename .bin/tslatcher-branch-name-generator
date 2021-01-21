@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+// var Sentencer = require('sentencer');
+var pokedex = require('Pokemon-DB/pokedex');
+var skills = require('Pokemon-DB/skills');
+
+function randomItem(arr, max) {
+    return arr[Math.floor(Math.random() * max)];
+}
+
+var pokemon = randomItem(pokedex, 251);
+var allPokemonSkills = [
+    ...(pokemon.skills.egg || []),
+    ...(pokemon.skills.level_up || []),
+    ...(pokemon.skills.tm || []),
+    ...(pokemon.skills.transfer || []),
+    ...(pokemon.skills.tutor || []),
+    ...(pokemon.skills["pre-evolution"] || []),
+].filter(skill => skill !== undefined);
+
+var skillId = randomItem(allPokemonSkills, allPokemonSkills.length);
+var skill = skills.find(sk => sk.id === skillId);
+
+if (skill === undefined) {
+  throw new Error(`Could not find skill ${skillId} from ${allPokemonSkills.length} for ${pokemon.ename}`);
+}
+
+var sentence = `tslatchers ${pokemon.ename} used ${skill.ename}`;
+console.log(sentence.replace(/\s/g, "-").toLowerCase().replace(/[^\x00-\x7F]/g, ""));
+
+// var sentence = Sentencer.make("tslatcher is {{ an_adjective }} {{ noun }}");
+// console.log(sentence.replace(/\s/g, "-"));

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "Pokemon-DB": "git+ssh://git@github.com:fanzeyi/Pokemon-DB.git",
+    "sentencer": "^0.1.5"
+  }
+}

@@ -1,0 +1,3 @@
+The settings folder is an unzipped settings.zip, containing my IDEA settings. Zip it back up, and then File -> Manage IDE Settings -> Import Settings...
+I've deleted a few tslint / eslint settings that referenced local paths, if the settings fail to load, the project.default.xml might need to be merged with a correct version.
+Also, from path.macros, deleted <macro name="MAVEN_REPOSITORY" <macro name="KOTLIN_BUNDLED"

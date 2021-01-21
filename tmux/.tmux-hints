@@ -1,0 +1,18 @@
+prefix + y - copies text from the command line to clipboard.
+] - paste
+
+prefix + ctrl-f - simple *f*ile search
+prefix + ctrl-g - jumping over *g*it status files (best used after git status command)
+prefix + ctrl-u - *u*rl search
+prefix + ctrl-d - number search (mnemonic d, as digit)
+prefix + ctrl-r - "*r*ails server" request search
+
+prefix + tab - tree
+
+In tmux copy mode:
+    o - "open" a highlighted selection with the system default program. open for OS X or xdg-open for Linux.
+    [ - yank (or y)
+
+    Ctrl + y - copy and paste to command line
+    alt + y - copy to system clipbaord, paste to command line
+

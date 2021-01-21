@@ -1,0 +1,25 @@
+#!/bin/bash
+
+CURR_PATH="$PWD"
+REAL_GRADLEW="$CURR_PATH/gradlew"
+
+# Check current directory, which might be root directory for gradlew
+if [ -x "$REAL_GRADLEW" ]; then
+  "$REAL_GRADLEW" "$@"
+  exit $?
+else
+  while [ "$CURR_PATH" != "/" ]; do
+    CURR_PATH=$(dirname "$CURR_PATH")
+
+    REAL_GRADLEW="$CURR_PATH/gradlew"
+    if [ -x "$REAL_GRADLEW" ]; then
+        cd $CURR_PATH
+        "$REAL_GRADLEW" "$@"
+        exit $?
+    fi
+  done
+fi
+
+echo "Unable to find gradlew file upwards in filesystem"
+
+exit 1

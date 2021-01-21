@@ -1,0 +1,27 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "MoonRise",
+    "workbench.sideBar.location": "left",
+    "workbench.activityBar.visible": false,
+    "window.title": "${activeEditorMedium}${separator}${rootName}",
+    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
+    "workbench.editor.showTabs": false,
+    "vscode_custom_css.imports": ["file:///Users/tslatcher/.vscode.css"],
+    "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.blame.line.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "workbench.colorCustomizations": {
+        "[MoonRise]": {
+            "sideBar.background": "#222222",
+            "editor.background": "#202020",
+            "editor.selectionBackground": "#3e515d",
+            "editor.selectionHighlightBorder": "#606060"
+        }
+    },
+    "editor.scrollBeyondLastLine": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "extensions.ignoreRecommendations": true,
+    "files.autoSave": "afterDelay"
+}

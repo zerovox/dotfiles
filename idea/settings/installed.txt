@@ -1,0 +1,9 @@
+CheckStyle-IDEA
+FrameSwitcher
+com.dubreuia
+com.intellij.plugins.watcher
+org.elixir_lang
+org.jetbrains.kotlin
+org.rust.lang
+org.toml.lang
+palantir-java-format

@@ -1,0 +1,16 @@
+<application>
+  <component name="NotificationConfiguration">
+    <notification groupId="Debugger messages" displayType="TOOL_WINDOW" />
+    <notification groupId="Git Important Messages" displayType="STICKY_BALLOON" />
+    <notification groupId="Git Messages" displayType="TOOL_WINDOW" />
+    <notification groupId="Gradle warnings" displayType="TOOL_WINDOW" />
+    <notification groupId="HotSwap" displayType="TOOL_WINDOW" />
+    <notification groupId="IDE Usage Statistics" displayType="STICKY_BALLOON" shouldLog="false" />
+    <notification groupId="Indexing" />
+    <notification groupId="Maven Import" displayType="STICKY_BALLOON" />
+    <notification groupId="notification.group.id.gradle" displayType="TOOL_WINDOW" />
+    <notification groupId="Plugins Lifecycle Group" displayType="STICKY_BALLOON" />
+    <notification groupId="System Health" displayType="STICKY_BALLOON" />
+    <notification groupId="Update Checker" displayType="STICKY_BALLOON" />
+  </component>
+</application>

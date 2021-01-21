@@ -1,0 +1,67 @@
+#!/bin/bash -e
+#
+# mov2gif converts quicktime movies into animated gifs.
+# This is especially useful if you use the OSX
+# screen recording tool to generate videos.
+#
+# Requirements:
+#  * [ffmpeg](https://www.ffmpeg.org/) -- `brew install ffmpeg`
+#  * sips -- BSD utility available on OSX automagically!
+#  * [gifsicle](http://www.lcdf.org/gifsicle/) -- `brew install gifsicle`
+#
+# Drop this file somewhere on your $PATH (like /usr/local/bin)
+# and save it as `mov2gif`.  Then you'll be able to use `mov2gif`
+# whenever you want!
+
+_printUsage () {
+  echo
+  echo "Usage: "
+  echo "  ${0} [inputMovFile] [optionalOutputFile]"
+  echo
+  echo "If optionalOutputFile is not specified, gif will be written out to animation-...gif"
+  echo "in the current working directory."
+}
+
+if [[ "${#}" -ne 1 && "${#}" -ne 2 ]]; then
+  echo "Incorrect number of inputs"
+  _printUsage
+  exit 1
+elif [ "$(file --mime-type --brief ${1})" != "video/quicktime" ]; then
+  echo "inputMovFile needs to be a valid video/quicktime file"
+  _printUsage
+  exit 1
+elif [[ "${#}" -eq 2 && -e "${2}" ]]; then
+  echo "Output file ${2} already exists."
+  _printUsage
+  exit 1
+fi
+
+_input="${1}"
+if [[ "${#}" -eq 2 ]]; then
+  _output=${2}
+else
+  _output=animation-$(date +"%m_%d_%Y").gif
+fi
+
+echo "Converting ${_input} into ${_output}..."
+echo
+
+mkdir /tmp/.tmpGifDir
+mkdir /tmp/.tmpGifDir/pngs
+mkdir /tmp/.tmpGifDir/gifs
+ffmpeg -i ${_input} -r 10 /tmp/.tmpGifDir/pngs/out%04d.png > /dev/null
+
+# sips is so noisy that we mute it entirely.
+sips -s format gif /tmp/.tmpGifDir/pngs/*.png --out /tmp/.tmpGifDir/gifs > /dev/null 2> /dev/null
+gifsicle --optimize=3 --delay=3 --loopcount --merge --colors=256 /tmp/.tmpGifDir/gifs/*.gif > ${_output}
+rm -r /tmp/.tmpGifDir
+
+if [[ -e "${_output}" ]]; then
+  echo
+  echo "Successfully wrote output to ${_output}"
+  exit 0
+else
+  echo
+  echo "An unknown error occurred.  Scroll up and figure it out."
+  exit 1
+fi

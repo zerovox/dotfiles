@@ -1,0 +1,9 @@
+<application>
+  <component name="EmmetOptions">
+    <option name="emmetEnabled" value="false" />
+    <option name="emmetExpandShortcut" value="32" />
+  </component>
+  <component name="JsxEmmetOptions">
+    <option name="emmetEnabled" value="false" />
+  </component>
+</application>

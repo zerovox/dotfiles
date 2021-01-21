@@ -1,0 +1,115 @@
+<application>
+  <component name="CommunityFileTypes" version="11">
+    <ignoreFiles list="CVS;SCCS;RCS;rcs;.DS_Store;.svn;.pyc;.pyo;*.pyc;*.pyo;.git;*.hprof;_svn;.hg;*.lib;*~;__pycache__;.bundle;*.rbc;" />
+    <extensionMap>
+      <mapping ext="vm" type="HTML" />
+      <mapping ext="json" type="JavaScript files (syntax highlighting only)" />
+      <mapping pattern=".gitkeep" type="PLAIN_TEXT" />
+      <mapping ext="yml" type="PLAIN_TEXT" />
+      <mapping ext="less" type="PLAIN_TEXT" />
+      <mapping ext="coffee" type="PLAIN_TEXT" />
+      <mapping ext="tagx" type="XML" />
+      <mapping ext="jspx" type="XML" />
+    </extensionMap>
+  </component>
+  <component name="FileTypeManager" version="18">
+    <ignoreFiles list="*.iml;*.ipr;*.iws;*.pyc;*.pyo;*.rbc;*~;.DS_Store;.awcache;.classpath;.git;.gitkeep;.gradle;.hg;.idea;.project;.settings;.svn;.wizard;CVS;RCS;SCCS;__pycache__;_svn;build;compiler_cache;dist;ecbuild;gradlew;gradlew.bat;rcs;" />
+    <extensionMap>
+      <mapping ext="gradle.kts" type="Kotlin" />
+      <mapping ext="main.kts" type="Kotlin" />
+      <mapping pattern="gaiaMapCoyoteClient" type="PLAIN_TEXT" />
+      <mapping pattern="fe-things" type="PLAIN_TEXT" />
+      <mapping pattern="objectViewIcons" type="PLAIN_TEXT" />
+      <mapping pattern="objectViewPropertySections" type="PLAIN_TEXT" />
+      <mapping pattern=".gradletasknamecache" type="PLAIN_TEXT" />
+      <mapping pattern="a-client-plugin-file" type="PLAIN_TEXT" />
+      <mapping pattern="afx" type="PLAIN_TEXT" />
+      <mapping pattern="tmp" type="PLAIN_TEXT" />
+      <mapping pattern="sloth" type="PLAIN_TEXT" />
+      <mapping pattern=".zhistory" type="PLAIN_TEXT" />
+      <mapping pattern="adf" type="PLAIN_TEXT" />
+      <mapping pattern="lkjlk" type="PLAIN_TEXT" />
+      <mapping pattern="objectViewLinkedObjectFilters" type="PLAIN_TEXT" />
+      <mapping pattern="apollo-agent" type="PLAIN_TEXT" />
+      <mapping pattern="forwardGotham" type="PLAIN_TEXT" />
+      <mapping pattern="scratch" type="PLAIN_TEXT" />
+      <mapping pattern="sdfgsdfgsdfg" type="PLAIN_TEXT" />
+      <mapping pattern="scratc" type="PLAIN_TEXT" />
+      <mapping pattern="nyx-develop" type="PLAIN_TEXT" />
+      <mapping pattern="amend-and-move-tags" type="PLAIN_TEXT" />
+      <mapping pattern="api" type="PLAIN_TEXT" />
+      <mapping pattern="objectView" type="PLAIN_TEXT" />
+      <mapping pattern="asdrf" type="PLAIN_TEXT" />
+      <mapping pattern="react" type="PLAIN_TEXT" />
+      <mapping pattern=".htmlnanorc" type="PLAIN_TEXT" />
+      <mapping pattern="getPlotSet" type="PLAIN_TEXT" />
+      <mapping pattern="all" type="PLAIN_TEXT" />
+      <mapping pattern="test" type="PLAIN_TEXT" />
+      <mapping pattern="GooglePreview" type="PLAIN_TEXT" />
+      <mapping pattern="bar" type="PLAIN_TEXT" />
+      <mapping pattern="nodes" type="PLAIN_TEXT" />
+      <mapping pattern="game_page" type="PLAIN_TEXT" />
+      <mapping pattern="objectViewBaseProperties" type="PLAIN_TEXT" />
+      <mapping pattern="__tests__" type="PLAIN_TEXT" />
+      <mapping pattern="a-server-plugin-file" type="PLAIN_TEXT" />
+      <mapping pattern=".postcssrc" type="PLAIN_TEXT" />
+      <mapping pattern=".gitingore" type="PLAIN_TEXT" />
+      <mapping pattern="jackal" type="PLAIN_TEXT" />
+      <mapping pattern="objectViewLinkedObjectSections" type="PLAIN_TEXT" />
+      <mapping pattern="homeApp" type="PLAIN_TEXT" />
+      <mapping pattern=".conventional-changelog-lintrc" type="PLAIN_TEXT" />
+      <mapping pattern="CampaignFinanceObjectTypeNodeProperties" type="PLAIN_TEXT" />
+      <mapping pattern="objectView_overview" type="PLAIN_TEXT" />
+      <mapping pattern="GraphWorkspaceStatets" type="PLAIN_TEXT" />
+      <mapping pattern="dfg" type="PLAIN_TEXT" />
+      <mapping pattern="asdfasdf" type="PLAIN_TEXT" />
+      <mapping pattern="serverkey" type="PLAIN_TEXT" />
+      <mapping pattern="tmp-monorepo-and-promote-changelogs" type="PLAIN_TEXT" />
+      <mapping pattern="extending-helper-section" type="PLAIN_TEXT" />
+      <mapping pattern="asdt" type="PLAIN_TEXT" />
+      <mapping pattern="enabledPlugins" type="PLAIN_TEXT" />
+      <mapping pattern="some-file-in-the-root" type="PLAIN_TEXT" />
+      <mapping pattern="WarnResult" type="PLAIN_TEXT" />
+      <mapping pattern="gothamOnly" type="PLAIN_TEXT" />
+      <mapping pattern="foo" type="PLAIN_TEXT" />
+      <mapping pattern=".gitkeep" type="PLAIN_TEXT" />
+      <mapping pattern="baseApp_searchResults" type="PLAIN_TEXT" />
+      <mapping pattern="fa" type="PLAIN_TEXT" />
+      <mapping pattern="baseApp" type="PLAIN_TEXT" />
+      <mapping pattern="AsyncOgreObjectQuery" type="PLAIN_TEXT" />
+      <mapping pattern="helper-demo" type="PLAIN_TEXT" />
+      <mapping pattern="asdf" type="PLAIN_TEXT" />
+      <mapping pattern="cleanup_notes" type="PLAIN_TEXT" />
+      <mapping ext="soy" type="PLAIN_TEXT" />
+      <mapping ext="prefs" type="PLAIN_TEXT" />
+      <mapping ext="inc" type="PLAIN_TEXT" />
+      <mapping ext="pegjs" type="PLAIN_TEXT" />
+      <mapping ext="itl" type="PLAIN_TEXT" />
+      <mapping ext="80" type="PLAIN_TEXT" />
+      <mapping ext="test" type="PLAIN_TEXT" />
+      <mapping ext="lerna_backup" type="PLAIN_TEXT" />
+      <mapping ext="95" type="PLAIN_TEXT" />
+      <mapping ext="rc" type="PLAIN_TEXT" />
+      <mapping ext="s" type="PLAIN_TEXT" />
+      <mapping ext="rst" type="PLAIN_TEXT" />
+      <mapping ext="template" type="PLAIN_TEXT" />
+      <mapping ext="cer" type="PLAIN_TEXT" />
+      <mapping ext="po" type="PLAIN_TEXT" />
+      <mapping ext="tx" type="PLAIN_TEXT" />
+      <mapping ext="ogre" type="PLAIN_TEXT" />
+      <mapping pattern="graph" type="YAML" />
+      <mapping pattern="objectTypes" type="YAML" />
+      <removed_mapping ext="apk" approved="true" type="ARCHIVE" />
+      <removed_mapping ext="bat" approved="true" type="PLAIN_TEXT" />
+      <removed_mapping ext="cmd" approved="true" type="PLAIN_TEXT" />
+      <removed_mapping ext="conf" approved="true" type="PLAIN_TEXT" />
+      <removed_mapping ext="dockerfile" approved="true" type="textmate" />
+      <removed_mapping ext="log" approved="true" type="PLAIN_TEXT" />
+      <removed_mapping ext="makefile" approved="true" type="textmate" />
+      <removed_mapping ext="props" approved="true" type="PLAIN_TEXT" />
+      <removed_mapping ext="psd" approved="true" type="Image" />
+      <removed_mapping ext="rs" approved="true" type="Android RenderScript" />
+      <removed_mapping ext="snakefile" approved="true" type="textmate" />
+    </extensionMap>
+  </component>
+</application>

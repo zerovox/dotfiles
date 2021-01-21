@@ -1,0 +1,8 @@
+alefragnani.bookmarks-12.1.2
+dbaeumer.vscode-eslint-2.1.14
+ipatalas.vscode-postfix-ts-1.9.2
+ms-vscode.vscode-typescript-tslint-plugin-1.3.3
+be5invis.vscode-custom-css-4.0.1
+eamodio.gitlens-11.1.3
+k--kato.intellij-idea-keybindings-0.2.41
+odind.vsc-moonrise-theme-0.2.2
