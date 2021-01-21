@@ -66,5 +66,9 @@ if [[ -s ~/.fzf.zsh ]]; then
           cd $(fasd -l -R $1 | fzf)
         }
     fi
+fi
 
+# Source local additions
+if [[ -s ~/.zshrc-local ]]; then
+  source ~/.zshrc-local
 fi
