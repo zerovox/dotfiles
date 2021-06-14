@@ -45,6 +45,7 @@ brew "libheif"
 brew "imagemagick"
 brew "jq"
 brew "kakoune"
+brew "mas"
 brew "ncmpcpp"
 brew "node"
 brew "nvm"
@@ -70,6 +71,8 @@ cask "lastfm"
 cask "zulu11"
 cask "zulu15"
 cask "zulu8"
+mas "iMovie", id: 408981434
+mas "Menu World Time", id: 1446377255
 
 # Probably not required:
 # brew "node@10"
