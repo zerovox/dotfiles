@@ -1,0 +1,4 @@
+.gitconfig -> ~/
+replace $EMAIL
+replace "$GH_ENTERPRISE_URL"
+check ghq is where the git checkouts should be stored

@@ -1,0 +1,16 @@
+hook global BufOpenFile .* %{ editorconfig-load }
+hook global BufNewFile .* %{ editorconfig-load }
+
+set-option global grepcmd 'ag --column'
+
+hook global BufSetOption filetype=javascript %{
+        set-option buffer formatcmd "prettier --stdin-filepath=%val{buffile}"
+}
+
+hook global BufSetOption filetype=json %{
+        set-option buffer formatcmd "prettier --stdin-filepath=%val{buffile}"
+}
+
+hook global BufSetOption filetype=yaml %{
+        set-option buffer formatcmd "prettier --stdin-filepath=%val{buffile}"
+}

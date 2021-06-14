@@ -1,0 +1,1 @@
+{"title":"Keypad keys to Divvy Shortcuts","rules":[{"description":"Keypad 7 to Left Main","manipulators":[{"type":"basic","from":{"consumer_key_code":"keypad_7"},"to":[{"repeat":false,"key_code":"open_bracket","modifiers":["left_gui","left_alt"]}]}]}]}

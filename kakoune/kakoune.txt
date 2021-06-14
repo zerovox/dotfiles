@@ -1,0 +1,4 @@
+kakrc -> ~/.config/kak/kakrc
+ghq get https://github.com/atomrc/kakoune-typescript.git 
+ln -s /usr/local/share/kak/autoload ~/.config/kak/autoload/autoload-std-lib
+ln -s typescript.kak ~/.config/kak/autoload/typescript.kak 

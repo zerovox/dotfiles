@@ -1,0 +1,72 @@
+[feature]
+	manyFiles = true
+[color]
+	ui = auto
+[user]
+	name = Tim Slatcher
+	email = $EMAIL
+[alias]
+	amend = commit --amend --no-edit
+	s = status
+	d0 = diff --cached
+	d1 = diff HEAD~1
+	up = "!git remote update -p; git merge --ff-only @{u}"
+	stash-rename = "!_() { rev=$(git rev-parse $1) && git stash drop $1 || exit 1 ; git diff-index --quiet HEAD; s=$?; [ $s != 0 ] && git stash save \"tmp stash from stash-rename\"; git stash apply $rev && shift && git stash save \"$@\" && [ $s != 0 ] && git stash pop stash@{1}; }; _"
+	mergetest = "!f(){ git merge --no-commit --no-ff \"$1\"; git merge --abort; echo \"Merge aborted\"; };f "
+	wip = commit -a -m wip
+	lint = commit -a -m lint
+	vfix = commit -a -m \"verify fix\"
+	lfix = commit -a -m \"lint fix\"
+	cleansrc = clean -xdf \"src/**/*.js*\" \"src/*.js*\"
+	stash-staged = "!bash -c \"git stash --keep-index; git stash push -m \"staged\" --keep-index; git stash pop stash@{1}\""
+	move-staged = "!bash -c \"git stash-staged;git commit -m \"temp\"; git stash; git reset --hard HEAD^; git stash pop\""
+[push]
+	default = simple
+	followTags = false
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+[merge]
+	conflictstyle = diff3
+[core]
+	excludesfile = ~/.gitignore_global
+	pager = "delta --plus-color=#012800 --minus-color=#340001 --theme='Monokai Extended'"
+	editor = vi
+#   fsmonitor = ~/.git/hooks/fsmonitor-watchman-v2
+[interactive]
+        diffFilter = delta --color-only
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
+#[remote "origin"]
+#   fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+    newHighlight = green bold 22
+[init]
+    templatedir = ~/.git/templates
+[ghq]
+	root = /Volumes/git
+[ghq "$GH_ENTERPRISE_URL"]
+    vcs = git
+[filesystem "Azul Systems, Inc.|11.0.3|/dev/disk1s5"]
+	timestampResolution = 6000 nanoseconds
+	minRacyThreshold = 0 nanoseconds
+[filesystem "Azul Systems, Inc.|1.8.0_212|/dev/disk1s5"]
+	timestampResolution = 1001 milliseconds
+	minRacyThreshold = 0 nanoseconds
+[credential]
+	helper =
+	helper = manager-core
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[filesystem "Azul Systems, Inc.|11.0.8|/dev/disk1s5"]
+	timestampResolution = 37000 nanoseconds
+	minRacyThreshold = 0 nanoseconds
+[advice]
+	detachedHead = false
