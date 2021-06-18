@@ -14,7 +14,6 @@ fi
 
 HISTSIZE=100000
 SAVEHIST=100000
-HISTFILE=~/.zhistory
 REPORTTIME=10
 # ALIASES
 alias hlog='git log --date-order --all --graph --format="%C(green)%h %Creset%C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset %s"'
