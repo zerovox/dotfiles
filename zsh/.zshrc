@@ -45,7 +45,9 @@ alias wnote='touch ~/Notes/weekly-$(gdate -d last-monday +%F).txt && idea ~/Note
 alias notes='idea ~/Notes/'
 alias h='eval "$(history -1000 | cut -c 8- | fzf)"'
 
-eval "$(scmpuff init -s)"
+if [ -x "$(command -v scmpuff)" ]; then
+  eval "$(scmpuff init -s)"
+fi
 
 function f {
   find -L . -name *$1* -print
