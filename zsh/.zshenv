@@ -14,12 +14,31 @@ export GOPATH=$HOME/go
 export TSC_NONPOLLING_WATCHER=true
 export NODE_TLS_REJECT_UNAUTHORIZED="0"
 
-# JAVA_HOME
-export JAVA_HOME=$(/usr/libexec/java_home)
+if [[ -s "/usr/libexec/java_home" ]]; then
+  # JAVA_HOME
+  export JAVA_HOME=$(/usr/libexec/java_home)
+fi
 
 # PATH
-export PATH="$YARN_GLOBAL/node_modules/.bin/:$HOME/.bin:$GOPATH/bin/:$PATH"
+if [[ -s "$YARN_GLOBAL" ]]; then
+  export PATH="$YARN_GLOBAL/node_modules/.bin/:$PATH"
+fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+if [[ -s "$HOME/.bin" ]]; then
+  export PATH="$HOME/.bin:$PATH"
+fi
+
+if [[ -s "$GOPATH/bin" ]]; then
+  export PATH="$GOPATH/bin:$PATH"
+fi
+
+if [[ -s "$HOME/.local/bin" ]]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [[ -s "$NVM_DIR" ]]; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+fi
+
 

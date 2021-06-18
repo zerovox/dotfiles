@@ -1,0 +1,23 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.tmux.conf: tmux/.tmux.conf
+    ~/.zshenv: zsh/.zshenv
+    ~/.zshrc: zsh/.zshrc
+    ~/.zlogin: zsh/.zlogin
+    ~/.zlogout: zsh/.zlogout
+    ~/.zprofile: zsh/.zprofile
+    ~/.zpreztorc: zsh/.zpreztorc
+    ~/.fzf.zsh: zsh/.fzf.zsh
+    ~/.local/bin/utils: .bin
+
+- create:
+    - ~/.local/bin
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - ["git clone --recursive https://github.com/sorin-ionescu/prezto.git \"${ZDOTDIR:-$HOME}/.zprezto\""]
