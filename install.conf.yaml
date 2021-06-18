@@ -20,4 +20,4 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - ["git clone --recursive https://github.com/sorin-ionescu/prezto.git \"${ZDOTDIR:-$HOME}/.zprezto\""]
+    - ["git clone --recursive https://github.com/sorin-ionescu/prezto.git \"${ZDOTDIR:-$HOME}/.zprezto\" || (cd \"${ZDOTDIR:-$HOME}/.zprezto\" ; git pull)"]
