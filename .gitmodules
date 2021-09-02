@@ -2,3 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "scm_breeze"]
+	path = scm_breeze
+	url = git://github.com/scmbreeze/scm_breeze.git

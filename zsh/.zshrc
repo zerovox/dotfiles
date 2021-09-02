@@ -30,6 +30,7 @@ alias gcb='git checkout -b'
 alias gcr='git checkout -b $(tslatcher-branch-name-generator)'
 alias grr='git fetch && git add . && git stash && git checkout origin/develop && gcr && git stash pop'
 alias gsr='git add . && git stash && git checkout develop && gcr && git stash pop'
+alias gdl='git branch -D `git branch | grep -v \* | xargs`'
 alias gcd='git checkout develop'
 alias gcod='git checkout origin/develop'
 alias ...="cd ../../"
@@ -44,9 +45,8 @@ alias wnote='touch ~/Notes/weekly-$(gdate -d last-monday +%F).txt && idea ~/Note
 alias notes='idea ~/Notes/'
 alias h='eval "$(history -1000 | cut -c 8- | fzf)"'
 
-if [ -x "$(command -v scmpuff)" ]; then
-  eval "$(scmpuff init -s)"
-fi
+
+[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
 function f {
   find -L . -name *$1* -print
