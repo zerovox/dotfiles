@@ -31,42 +31,28 @@
 	conflictstyle = diff3
 [core]
 	excludesfile = ~/.gitignore_global
-	pager = "delta --plus-color=#012800 --minus-color=#340001 --theme='Monokai Extended'"
+	pager = delta
 	editor = vi
-#   fsmonitor = ~/.git/hooks/fsmonitor-watchman-v2
+[merge]
+    conflictstyle = diff3
+[delta]
+    navigate = true
+    # side-by-side = true
+    line-numbers = true
 [interactive]
-        diffFilter = delta --color-only
+    diffFilter = delta --color-only
+[diff]
+    colorMoved = default
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	required = true
 	process = git-lfs filter-process
-#[remote "origin"]
-#   fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-    newHighlight = green bold 22
+# [remote "origin"]
+# 	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
 [init]
     templatedir = ~/.git/templates
 [ghq]
 	root = /Volumes/git
-[ghq "$GH_ENTERPRISE_URL"]
-    vcs = git
-[filesystem "Azul Systems, Inc.|11.0.3|/dev/disk1s5"]
-	timestampResolution = 6000 nanoseconds
-	minRacyThreshold = 0 nanoseconds
-[filesystem "Azul Systems, Inc.|1.8.0_212|/dev/disk1s5"]
-	timestampResolution = 1001 milliseconds
-	minRacyThreshold = 0 nanoseconds
-[credential]
-	helper =
-	helper = manager-core
-[credential "https://dev.azure.com"]
-	useHttpPath = true
-[filesystem "Azul Systems, Inc.|11.0.8|/dev/disk1s5"]
-	timestampResolution = 37000 nanoseconds
-	minRacyThreshold = 0 nanoseconds
 [advice]
 	detachedHead = false
