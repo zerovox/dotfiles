@@ -1,8 +1,18 @@
 - defaults:
     link:
       relink: true
+    brewfile:
+      stdout: true
+      stderr: true
+    shell:
+      stdout: true
+      stderr: true
 
 - clean: ['~']
+
+- create:
+    - ~/.local/bin
+    - ~/.config/kak
 
 - link:
     ~/.tmux.conf: tmux/.tmux.conf
@@ -15,10 +25,22 @@
     ~/.fzf.zsh: zsh/.fzf.zsh
     ~/.local/bin/utils: .bin
     ~/.scm_breeze: scm_breeze
-
-- create:
-    - ~/.local/bin
+    ~/.config/kak/kakrc: kakoune/kakrc
+    ~/.git.scmbrc: scm_breeze_config/.git.scmbrc
+    ~/.scmbrc: scm_breeze_config/.scmbrc
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     - ["git clone --recursive https://github.com/sorin-ionescu/prezto.git \"${ZDOTDIR:-$HOME}/.zprezto\" || (cd \"${ZDOTDIR:-$HOME}/.zprezto\" ; git pull)"]
+
+- brewfile:
+    - brew/Brewfile
+
+- shell:
+    - "ghq get https://github.com/atomrc/kakoune-typescript.git"
+    - "ln -s /usr/local/share/kak/autoload ~/.config/kak/autoload/autoload-std-lib"
+    - "ln -s typescript.kak ~/.config/kak/autoload/typescript.kak"
+
+- shell:
+    - "echo \"Manual steps required for: git, idea, vim, vscode, nvm, pnpm\""
+

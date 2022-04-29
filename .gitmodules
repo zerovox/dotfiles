@@ -4,4 +4,7 @@
 	ignore = dirty
 [submodule "scm_breeze"]
 	path = scm_breeze
-	url = git://github.com/scmbreeze/scm_breeze.git
+	url = https://github.com/scmbreeze/scm_breeze
+[submodule "dotbot-brew"]
+	path = dotbot-brew
+	url = https://github.com/wren/dotbot-brew.git
