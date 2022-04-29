@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Print a message on the terminal, assuming there is one
+echo "Touch your yubikey (after waiting a second or two)" >/dev/tty
+
+# In case git was invoked outside of cli
+# osascript -e 'display notification "Press Yubikey to sign commit" with title "Git"'
+
+# Now run gpg
+gpg "$@"
