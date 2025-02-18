@@ -11,34 +11,17 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
 fi
 
 export GOPATH=$HOME/go
-export TSC_NONPOLLING_WATCHER=true
+# export TSC_NONPOLLING_WATCHER=true
 export NODE_TLS_REJECT_UNAUTHORIZED="0"
 
 if [[ -s "/usr/libexec/java_home" ]]; then
   # JAVA_HOME
+  export JAVA_VERSION=17
   export JAVA_HOME=$(/usr/libexec/java_home)
-fi
-
-# PATH
-if [[ -s "$YARN_GLOBAL" ]]; then
-  export PATH="$YARN_GLOBAL/node_modules/.bin/:$PATH"
-fi
-
-if [[ -s "$HOME/.bin" ]]; then
-  export PATH="$HOME/.bin:$PATH"
-fi
-
-if [[ -s "$GOPATH/bin" ]]; then
-  export PATH="$GOPATH/bin:$PATH"
-fi
-
-if [[ -s "$HOME/.local/bin" ]]; then
-  export PATH="$HOME/.local/bin:$PATH"
 fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PNPM_HOME="$HOME/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+eval "$(direnv hook zsh)"
+. "$HOME/.cargo/env"

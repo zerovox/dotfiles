@@ -29,10 +29,12 @@ alias gpu='git push -u origin $(git rev-parse --abbrev-ref HEAD)'
 alias gcb='git checkout -b'
 alias gcr='git checkout -b $(tslatcher-branch-name-generator)'
 alias grr='git fetch && git add . && git stash && git checkout origin/develop && gcr && git stash pop'
-alias gsr='git add . && git stash && git checkout develop && gcr && git stash pop'
+alias gsr='git add . && git stash && git checkout origin/develop && gcr && git stash pop'
+alias gsdc='git add . && git stash && git checkout origin/develop-cached && gcr && git stash pop && git add .'
 alias gdl='git branch -D `git branch | grep -v \* | xargs`'
-alias gcd='git checkout develop'
-alias gcod='git checkout origin/develop'
+alias gcdd='git checkout develop'
+alias gcd='git checkout origin/develop'
+alias gcdc='git checkout origin/develop-cached'
 alias ...="cd ../../"
 alias ....="cd ../../../"
 alias wgc='./node_modules/.bin/wizard generate changelog'
@@ -45,6 +47,15 @@ alias wnote='touch ~/Notes/weekly-$(gdate -d last-monday +%F).txt && idea ~/Note
 alias notes='idea ~/Notes/'
 alias h='eval "$(history -1000 | cut -c 8- | fzf)"'
 
+function gac {
+  git diff --cached | llm 'Write a short plain text commit message for the following diff. It should have a single short message title, and additional bullets in the message body if relevant. Do not detail all technical changes, focus on the intention of the change. Removed TODOs may give hints to the indicate then intention of the changes. Return only the message, do not wrap the response in ticks. Avoid words like enhance and improve.' --no-stream > /tmp/gac.txt
+
+  vi /tmp/gac.txt
+
+  git commit -F /tmp/gac.txt 
+
+  rm -f /tmp/gac.txt
+}
 
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
@@ -53,8 +64,9 @@ function f {
 }
 
 function movtogif() {
-  ffmpeg -i "$1" -vf scale=800:-1 -r 10 -f image2pipe -vcodec ppm - |\
-    convert -delay 5 -layers Optimize -loop 0 - "${1%.*}.gif"
+  rm /tmp/palette.png
+  ffmpeg -i "$1" -vf "fps=10,scale=-1:-1:flags=lanczos,palettegen" -y /tmp/palette.png
+  ffmpeg -i "$1" -i /tmp/palette.png -lavfi "fps=10,scale=-1:-1:flags=lanczos [x]; [x][1:v] paletteuse" -y "${1%.*}.gif"
 }
 
 if [[ -s ~/.fzf.zsh ]]; then

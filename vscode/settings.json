@@ -7,7 +7,7 @@
     "breadcrumbs.enabled": false,
     "editor.minimap.enabled": false,
     "workbench.editor.showTabs": false,
-    "vscode_custom_css.imports": ["file:///Users/tslatcher/.vscode.css"],
+    "vscode_custom_css.imports": ["/Volumes/git/github.com/zerovox/dotfiles/vscode/.vscode.css"],
     "gitlens.codeLens.recentChange.enabled": false,
     "gitlens.codeLens.authors.enabled": false,
     "gitlens.blame.line.enabled": false,

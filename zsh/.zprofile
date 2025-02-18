@@ -62,6 +62,29 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
 
-export YARN_GLOBAL=$(yarn global dir)
+# PATH
+if [[ -s "$HOME/Library/pnpm" ]]; then
+  path=("$HOME/Library/pnpm" $path)
+fi
 
-export PATH="$HOME/.cargo/bin:$PATH"
+if [[ -s "$HOME/.cargo/bin" ]]; then
+  path=("$HOME/.cargo/bin" $path)
+fi
+
+if [[ -s "$GOPATH/bin" ]]; then
+  path=("$GOPATH/bin" $path)
+fi
+
+if [[ -s "/opt/homebrew/bin" ]]; then
+  path=("/opt/homebrew/bin" "/opt/homebrew/sbin" $path)
+fi
+
+if [[ -s "$HOME/.local/bin" ]]; then
+  path=("$HOME/.local/bin" $path)
+fi
+
+if [[ -s "$HOME/.bin" ]]; then
+  path=("$HOME/.bin" $path)
+fi
+
+export PATH
