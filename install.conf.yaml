@@ -29,6 +29,10 @@
     ~/.config/kak/kakrc: kakoune/kakrc
     ~/.git.scmbrc: scm_breeze_config/.git.scmbrc
     ~/.scmbrc: scm_breeze_config/.scmbrc
+    ~/Library/Application Support/Code/User/settings.json: vscode/settings.json
+    ~/Library/Application Support/Code/User/keybindings.json: vscode/keybindings.json
+    ~/.gitconfig: git/.gitconfig
+    ~/.gitignore: git/.gitignore
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
@@ -36,8 +40,12 @@
 
 - shell:
     - "ghq get https://github.com/atomrc/kakoune-typescript.git"
-    - "ln -s /usr/local/share/kak/autoload ~/.config/kak/autoload/autoload-std-lib"
-    - "ln -s typescript.kak ~/.config/kak/autoload/typescript.kak"
+    - "brew install kakoune"
+
+- link:
+    ~/.config/kak/autoload/typescript.kak: ../../atomrc/kakoune-typescript/typescript.kak
+    ~/.config/kak/autoload/autoload-std-lib: /usr/local/share/kak/autoload
+
 
 - shell:
     - "echo \"Manual steps required for: git, idea, vim, vscode, nvm, pnpm\""

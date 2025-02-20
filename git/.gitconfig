@@ -3,8 +3,10 @@
 [color]
 	ui = auto
 [user]
-	name = Tim Slatcher
-	email = $EMAIL
+	name = zerovox
+	email = 933064+zerovox@users.noreply.github.com
+[includeIf "gitdir:/Volumes/git/github.palantir.build/"]
+    path = /Volumes/git/github.palantir.build/.gitconfig
 [alias]
 	amend = commit --amend --no-edit
 	s = status
@@ -20,6 +22,7 @@
 	cleansrc = clean -xdf \"src/**/*.js*\" \"src/*.js*\"
 	stash-staged = "!bash -c \"git stash --keep-index; git stash push -m \"staged\" --keep-index; git stash pop stash@{1}\""
 	move-staged = "!bash -c \"git stash-staged;git commit -m \"temp\"; git stash; git reset --hard HEAD^; git stash pop\""
+	extract-diff = "!f() { git diff $1..$2 -- $3 | git apply -; }; f"
 [push]
 	default = simple
 	followTags = false
@@ -28,11 +31,11 @@
 [rebase]
 	autoStash = true
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesFile = ~/.gitignore
 	pager = delta
-	editor = vi
+	editor = nano
 [merge]
     conflictstyle = diff3
 [delta]
@@ -42,17 +45,23 @@
 [interactive]
     diffFilter = delta --color-only
 [diff]
+    algorithm = histogram
     colorMoved = default
+[diff "zip"]
+    textconv = unzip -c -a
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	required = true
 	process = git-lfs filter-process
-# [remote "origin"]
-# 	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
 [init]
     templatedir = ~/.git/templates
 [ghq]
 	root = /Volumes/git
+[credential]
+	helper =
+	helper = manager-core
 [advice]
 	detachedHead = false
+[gpg]
+	program = gpg_with_warning
