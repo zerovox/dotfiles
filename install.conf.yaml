@@ -13,6 +13,7 @@
 - create:
     - ~/.local/bin
     - ~/.config/kak
+    - ~/.config/kak/autoload
 
 - link:
     ~/.tmux.conf: tmux/.tmux.conf
@@ -32,9 +33,6 @@
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     - ["git clone --recursive https://github.com/sorin-ionescu/prezto.git \"${ZDOTDIR:-$HOME}/.zprezto\" || (cd \"${ZDOTDIR:-$HOME}/.zprezto\" ; git pull)"]
-
-- brewfile:
-    - brew/Brewfile
 
 - shell:
     - "ghq get https://github.com/atomrc/kakoune-typescript.git"
