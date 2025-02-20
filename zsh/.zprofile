@@ -83,6 +83,10 @@ if [[ -s "$HOME/.local/bin" ]]; then
   path=("$HOME/.local/bin" $path)
 fi
 
+if [[ -s "$HOME/.local/bin/utils" ]]; then
+  path=("$HOME/.local/bin/utils" $path)
+fi
+
 if [[ -s "$HOME/.bin" ]]; then
   path=("$HOME/.bin" $path)
 fi

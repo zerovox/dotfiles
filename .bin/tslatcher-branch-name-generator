@@ -1,32 +1,32 @@
 #!/usr/bin/env node
 
-// var Sentencer = require('sentencer');
-var pokedex = require('Pokemon-DB/pokedex');
-var skills = require('Pokemon-DB/skills');
+import { Dex } from '@pkmn/dex';
+import { Generations } from '@pkmn/data';
 
-function randomItem(arr, max) {
-    return arr[Math.floor(Math.random() * max)];
+const gens = new Generations(Dex);
+const gen2 = gens.get(2);
+
+function randomItem(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
 }
 
-var pokemon = randomItem(pokedex, 251);
-var allPokemonSkills = [
-    ...(pokemon.skills.egg || []),
-    ...(pokemon.skills.level_up || []),
-    ...(pokemon.skills.tm || []),
-    ...(pokemon.skills.transfer || []),
-    ...(pokemon.skills.tutor || []),
-    ...(pokemon.skills["pre-evolution"] || []),
-].filter(skill => skill !== undefined);
+const allPokemon = Array.from(gen2.species);
+const pokemon = randomItem(allPokemon);
 
-var skillId = randomItem(allPokemonSkills, allPokemonSkills.length);
-var skill = skills.find(sk => sk.id === skillId);
+const learnsets = gen2.learnsets;
+const learnset = await learnsets.get(pokemon.name);
+let allPokemonSkills = [];
 
-if (skill === undefined) {
-  throw new Error(`Could not find skill ${skillId} from ${allPokemonSkills.length} for ${pokemon.ename}`);
+if (learnset) {
+    allPokemonSkills = Object.keys(learnset.learnset || {}).flat();
 }
 
-var sentence = `tslatchers ${pokemon.ename} used ${skill.ename}`;
+const skillId = randomItem(allPokemonSkills);
+const skill = gen2.moves.get(skillId);
+
+if (!skill) {
+    throw new Error(`Could not find skill ${skillId} for ${pokemon.name}`);
+}
+
+const sentence = `tslatchers ${pokemon.name} used ${skill.name}`;
 console.log(sentence.replace(/\s/g, "-").toLowerCase().replace(/[^\x00-\x7F]/g, ""));
-
-// var sentence = Sentencer.make("tslatcher is {{ an_adjective }} {{ noun }}");
-// console.log(sentence.replace(/\s/g, "-"));
