@@ -1,4 +1,204 @@
 <application>
   <component name="ActionMacroManager">
+    <macro name="&lt;noname&gt;">
+      <typing text-keycode="80:0;82:0;73:0;86:0;65:0;84:0;69:0;32:0">private&amp;#x20;</typing>
+      <action id="EditorNextWord" />
+      <typing text-keycode="32:0;61:0;32:0">&amp;#x20;=&amp;#x20;</typing>
+      <action id="EditorLineEnd" />
+      <action id="EditorLeft" />
+      <typing text-keycode="61:0;46:1;32:0">=&gt;&amp;#x20;</typing>
+      <action id="EditorMatchBrace" />
+      <typing text-keycode="59:0">;</typing>
+      <action id="SaveAll" />
+    </macro>
+    <macro name="import from acme">
+      <action id="EditorLineStart" />
+      <action id="EditorTextStart" />
+      <action id="EditorEnter" />
+      <action id="EditorUp" />
+      <typing text-keycode="73:0;77:0;80:0;79:0;82:0;84:0;32:0;70:0;82:0;79:0;77:0;32:0;222:1;50:1;65:0;67:0;77:0;69:0;47:0">import&amp;#x20;from&amp;#x20;&quot;@acme/</typing>
+      <action id="EditorRight" />
+      <typing text-keycode="59:0">;</typing>
+      <action id="SaveAll" />
+    </macro>
+    <macro name="promised-to-std">
+      <shortuct text="shift control RIGHT" />
+      <action id="EditorNextWordWithSelection" />
+      <action id="EditorNextWordWithSelection" />
+      <action id="EditorBackSpace" />
+      <action id="EditorNextWord" />
+      <typing text-keycode="46:0;84:0;72:0;69:0;78:0;57:1;82:0;69:0;83:0;85:0;76:0;84:0;32:0;61:0;46:1;32:1;69:0;88:0;80:0;69:0;67:0;84:0;57:1;82:0;69:0;83:0;85:0;76:0;84:0">.then(result&amp;#x20;=&gt;&amp;#x20;expect(result</typing>
+      <action id="EditorRight" />
+      <action id="EditorRightWithSelection" />
+      <action id="EditorRightWithSelection" />
+      <action id="EditorLineEndWithSelection" />
+      <action id="EditorPreviousWordWithSelection" />
+      <action id="EditorPreviousWordWithSelection" />
+      <action id="EditorPreviousWordWithSelection" />
+      <action id="EditorLeft" />
+      <typing text-keycode="46:0;84:0;79:0;66:1;69:0">.toBe</typing>
+      <action id="EditorNextWordWithSelection" />
+      <action id="EditorNextWordWithSelection" />
+      <action id="EditorNextWordWithSelection" />
+      <action id="EditorNextWordWithSelection" />
+      <action id="EditorNextWordWithSelection" />
+      <action id="EditorNextWordWithSelection" />
+      <action id="EditorBackSpace" />
+      <typing text-keycode="57:1">(</typing>
+      <action id="EditorNextWord" />
+      <action id="EditorLeft" />
+      <action id="EditorRight" />
+      <action id="EditorRight" />
+      <typing text-keycode="48:1">)</typing>
+      <action id="SaveAll" />
+    </macro>
+    <macro name="class memeber to bound fn">
+      <typing text-keycode="80:0;82:0;73:0;86:0;65:0;84:0;69:0;32:0">private&amp;#x20;</typing>
+      <action id="EditorNextWord" />
+      <typing text-keycode="32:0;61:0;32:0">&amp;#x20;=&amp;#x20;</typing>
+      <action id="EditorLineEnd" />
+      <action id="EditorLeft" />
+      <typing text-keycode="61:0;46:1;32:0">=&gt;&amp;#x20;</typing>
+      <action id="GotoAction" />
+      <typing text-keycode="78:0;69:0;88:0;84:0">next</typing>
+      <action id="EditorBackSpace" />
+      <action id="EditorBackSpace" />
+      <action id="EditorBackSpace" />
+      <action id="EditorBackSpace" />
+    </macro>
+    <macro name="class member to bound private">
+      <action id="PlaybackLastMacro" />
+      <action id="EditorNextWord" />
+      <action id="EditorLineEnd" />
+      <action id="EditorLeft" />
+      <action id="GotoAction" />
+      <typing text-keycode="78:0;69:0;88:0;84:0">next</typing>
+      <action id="EditorBackSpace" />
+      <action id="EditorBackSpace" />
+      <action id="EditorBackSpace" />
+      <typing text-keycode="78:0;69:0;88:0;84:0">next</typing>
+      <action id="EditorBackSpace" />
+      <action id="EditorBackSpace" />
+      <action id="EditorBackSpace" />
+      <action id="EditorBackSpace" />
+      <typing text-keycode="77:0;65:0;84:0;67:0;72:0">match</typing>
+      <shortuct text="ESCAPE" />
+      <action id="EditorCodeBlockEndWithSelection" />
+      <action id="EditorRight" />
+      <typing text-keycode="59:0">;</typing>
+    </macro>
+    <macro name="create TComponent">
+      <action id="EditorCopy" />
+      <action id="EditorLeft" />
+      <typing text-keycode="67:0;79:0;78:0">con</typing>
+      <action id="EditorBackSpace" />
+      <action id="EditorBackSpace" />
+      <action id="EditorBackSpace" />
+      <typing text-keycode="84:0;89:0;80:0;69:0;32:0;84:1">type&amp;#x20;T</typing>
+      <action id="EditorLineEnd" />
+      <typing text-keycode="32:0;61:0;32:0;69:0;87:0">&amp;#x20;=&amp;#x20;ew</typing>
+      <action id="EditorBackSpace" />
+      <typing text-keycode="78:0;69:0;87:0">new</typing>
+      <action id="EditorBackSpace" />
+      <action id="EditorBackSpace" />
+      <action id="EditorBackSpace" />
+      <action id="EditorBackSpace" />
+      <typing text-keycode="78:0;69:0;87:0;32:0;57:1;48:1;32:0;61:0;46:1;32:0">new&amp;#x20;()&amp;#x20;=&gt;&amp;#x20;</typing>
+      <action id="EditorPaste" />
+      <typing text-keycode="44:1;84:1;46:1;59:0">&lt;T&gt;;</typing>
+      <action id="EditorEnter" />
+      <typing text-keycode="67:0;79:0;78:0;83:0;84:0;32:0;84:1">const&amp;#x20;T</typing>
+      <action id="EditorPaste" />
+      <typing text-keycode="32:0;61:0;32:0">&amp;#x20;=&amp;#x20;</typing>
+      <action id="EditorPaste" />
+      <typing text-keycode="32:0;65:0;83:0;32:0;84:1">&amp;#x20;as&amp;#x20;T</typing>
+      <action id="EditorPaste" />
+      <typing text-keycode="59:0;32:0;47:0;47:0;32:0;84:0;83:0;76:0;73:0;78:0;84:0;59:1;68:0;73:0;83:0;65:0;66:0;76:0;69:0;45:0;76:0;73:0;83:0;84:0">;&amp;#x20;//&amp;#x20;tslint:disable-list</typing>
+      <action id="EditorBackSpace" />
+      <action id="EditorBackSpace" />
+      <typing text-keycode="78:0;69:0;59:1;86:0;65:0;82:0;73:0;65:0;66:0;76:0;69:0;45:0;78:0;65:0;77:0;69:0">ne:variable-name</typing>
+      <action id="GotoAction" />
+      <shortuct text="ENTER" />
+    </macro>
+    <macro name="pureRender to PureComponent">
+      <action id="GotoLine" />
+      <typing text-keycode="48:0">0</typing>
+      <shortuct text="ENTER" />
+      <typing text-keycode="59:1;48:0">:0</typing>
+      <action id="GotoLine" />
+      <typing text-keycode="48:0;80:1;48:0">0P0</typing>
+      <shortuct text="ENTER" />
+      <action id="EditorBackSpace" />
+      <action id="EditorBackSpace" />
+      <shortuct text="ENTER" />
+      <shortuct text="ENTER" />
+      <shortuct text="ENTER" />
+      <shortuct text="ENTER" />
+      <action id="EditorBackSpace" />
+      <typing text-keycode="49:0">1</typing>
+      <shortuct text="ENTER" />
+      <action id="Find" />
+      <typing text-keycode="80:0;85:0;82:0;69:0;82:1;69:0;78:0;68:0;69:0;82:0">pureRender</typing>
+      <shortuct text="ESCAPE" />
+      <action id="EditorDeleteLine" />
+      <action id="Find" />
+      <shortuct text="ENTER" />
+      <shortuct text="ESCAPE" />
+      <action id="EditorDeleteLine" />
+      <action id="Find" />
+      <typing text-keycode="82:1;69:0;65:0;67:0;84:0;46:0;67:1;73:0">React.Ci</typing>
+      <action id="EditorBackSpace" />
+      <typing text-keycode="79:0;77:0;80:0;79:0;78:0;69:0;78:0;84:0">omponent</typing>
+      <shortuct text="shift meta R" />
+      <shortuct text="meta R" />
+      <shortuct text="TAB" />
+      <typing text-keycode="82:1;69:0;65:0;67:0;84:0;46:0;80:1;85:0;82:0;69:0;67:1;79:0;77:0;80:0;79:0;78:0;69:0;78:0;84:0">React.PureComponent</typing>
+      <shortuct text="ESCAPE" />
+    </macro>
+    <macro name="aef">
+      <action id="GotoLine" />
+      <typing text-keycode="49:0">1</typing>
+      <shortuct text="ENTER" />
+      <action id="Find" />
+      <typing text-keycode="80:0;85:0;82:0;69:0;82:1;69:0;78:0;68:0;69:0;82:0">pureRender</typing>
+      <shortuct text="ESCAPE" />
+      <action id="EditorDeleteLine" />
+      <action id="Find" />
+      <typing text-keycode="50:1;80:0;82:0">@pr</typing>
+      <action id="EditorBackSpace" />
+      <typing text-keycode="85:0;82:0;69:0;82:1;69:0;78:0;68:0;69:0;82:0">ureRender</typing>
+      <shortuct text="ESCAPE" />
+      <action id="EditorDeleteLine" />
+      <action id="Find" />
+      <shortuct text="shift meta R" />
+      <shortuct text="meta R" />
+      <typing text-keycode="82:1;69:0;65:0;67:0;84:0;46:0;67:1;79:0;77:0;80:0;79:0;78:0;69:0;78:0;84:0">React.Component</typing>
+      <shortuct text="TAB" />
+      <typing text-keycode="82:1">R</typing>
+      <action id="EditorBackSpace" />
+      <action id="$SelectAll" />
+      <typing text-keycode="82:1;51:0;65:0">R3a</typing>
+      <action id="EditorBackSpace" />
+      <typing text-keycode="69:0;65:0">ea</typing>
+      <action id="EditorBackSpace" />
+      <action id="EditorBackSpace" />
+      <typing text-keycode="69:0;65:0">ea</typing>
+      <action id="EditorBackSpace" />
+      <action id="EditorBackSpace" />
+      <action id="EditorBackSpace" />
+      <typing text-keycode="69:0;65:0;67:0;84:0;46:0;80:1;85:0;82:0;69:0;67:1;79:0;77:0;76:0;79:0">eact.PureComlo</typing>
+      <action id="EditorBackSpace" />
+      <action id="EditorBackSpace" />
+      <typing text-keycode="79:0">o</typing>
+      <action id="EditorBackSpace" />
+      <typing text-keycode="80:0;79:0;78:0;69:0;78:0;84:0">ponent</typing>
+      <shortuct text="ESCAPE" />
+    </macro>
+    <macro name="make partial">
+      <action id="EditorLeft" />
+      <typing text-keycode="80:1;65:0;82:0;84:0;73:0;65:0;76:0;0:1">Partial&lt;</typing>
+      <action id="EditorNextWord" />
+      <typing text-keycode="0:1">&gt;</typing>
+    </macro>
   </component>
 </application>

@@ -1,0 +1,14 @@
+<application>
+  <component name="IgnoredPluginSuggestions">
+    <option name="pluginIds">
+      <list>
+        <option value="com.intellij.bigdatatools.rfs" />
+        <option value="aws.toolkit" />
+        <option value="com.jetbrains.restWebServices" />
+        <option value="com.intellij.beanValidation" />
+        <option value="com.intellij.aqua" />
+        <option value="com.intellij.angularjs" />
+      </list>
+    </option>
+  </component>
+</application>

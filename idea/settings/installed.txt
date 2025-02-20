@@ -1,9 +1,6 @@
-CheckStyle-IDEA
 FrameSwitcher
-com.dubreuia
-com.intellij.plugins.watcher
-org.elixir_lang
-org.jetbrains.kotlin
-org.rust.lang
-org.toml.lang
+com.palantir.witchcraft.api.logging.idea
 palantir-java-format
+EclipseCodeFormatter
+CheckStyle-IDEA
+com.github.copilot

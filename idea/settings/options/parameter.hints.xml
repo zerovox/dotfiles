@@ -1,5 +1,5 @@
 <application>
   <component name="ParameterNameHintsSettings">
-    <blacklists />
+    <option id="js.param.hints.show.names.for.tagged" value="false" />
   </component>
 </application>

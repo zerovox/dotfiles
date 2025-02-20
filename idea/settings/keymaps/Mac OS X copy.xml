@@ -1,4 +1,16 @@
 <keymap version="1" name="Mac OS X copy" parent="Mac OS X">
+  <action id="AceAction">
+    <keyboard-shortcut first-keystroke="ctrl semicolon" />
+    <keyboard-shortcut first-keystroke="meta semicolon" />
+  </action>
+  <action id="AceLineAction">
+    <keyboard-shortcut first-keystroke="shift ctrl semicolon" />
+    <keyboard-shortcut first-keystroke="shift meta semicolon" />
+  </action>
+  <action id="AceTargetAction">
+    <keyboard-shortcut first-keystroke="ctrl alt semicolon" />
+    <keyboard-shortcut first-keystroke="meta alt semicolon" />
+  </action>
   <action id="ActivateFavoritesToolWindow" />
   <action id="ActivateGulpToolWindow">
     <keyboard-shortcut first-keystroke="meta 7" />
@@ -53,6 +65,9 @@
     <keyboard-shortcut first-keystroke="alt tab" />
     <keyboard-shortcut first-keystroke="ctrl a" second-keystroke="right" />
   </action>
+  <action id="OpenInlineChatAction">
+    <keyboard-shortcut first-keystroke="shift ctrl g" />
+  </action>
   <action id="PasteMultiple" />
   <action id="PlaybackLastMacro">
     <keyboard-shortcut first-keystroke="ctrl period" />
@@ -68,6 +83,8 @@
   <action id="SelectInProjectView">
     <keyboard-shortcut first-keystroke="meta l" />
   </action>
+  <action id="ShowProjectStructureSettings" />
+  <action id="ShowRecentTests" />
   <action id="SmartTypeCompletion">
     <keyboard-shortcut first-keystroke="shift ctrl space" />
     <keyboard-shortcut first-keystroke="ctrl alt space" />

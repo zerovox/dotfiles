@@ -37,52 +37,29 @@
       <component name="EslintConfiguration">
         <option name="fix-on-save" value="true" />
       </component>
-      <component name="GradleLocalSettings">
-        <option name="modificationStamps">
-          <map>
-          </map>
-        </option>
-        <option name="projectSyncType">
-          <map>
-          </map>
-        </option>
+      <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+      <component name="ProjectView">
+        <navigator proportions="" version="1" />
+        <panes />
       </component>
-      <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
-      <component name="PropertiesComponent">
-        <property name="GoToClass.includeLibraries" value="false" />
-        <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-        <property name="GoToFile.includeJavaFiles" value="false" />
-        <property name="MemberChooser.copyJavadoc" value="false" />
-        <property name="MemberChooser.showClasses" value="true" />
-        <property name="MemberChooser.sorted" value="false" />
-        <property name="js.linters.configure.manually.selectedeslint" value="true" />
-        <property name="js.linters.configure.manually.selectedtslint" value="true" />
-        <property name="last_opened_file_path" value="/usr/local/lib/node_modules/typescript/bin" />
-        <property name="node.js.path.for.package.eslint" value="project" />
-        <property name="node.js.path.for.package.standard" value="project" />
-        <property name="node.js.path.for.package.tslint" value="project" />
-        <property name="node.js.selected.package.standard" value="" />
-        <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
-        <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-        <property name="options.lastSelected" value="project.propCompiler" />
-        <property name="options.searchVisible" value="true" />
-        <property name="options.splitter.details.proportions" value="0.2" />
-        <property name="options.splitter.main.proportions" value="0.3" />
-        <property name="project.structure.last.edited" value="Problems" />
-        <property name="project.structure.proportion" value="0.15" />
-        <property name="project.structure.side.proportion" value="0.2" />
-        <property name="settings.editor.selected.configurable" value="settings.javascript.linters.tslint" />
+      <component name="ProjectViewState">
+        <option name="showLibraryContents" value="true" />
       </component>
+      <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.jsOptions&quot;
+  }
+}</component>
       <component name="RunManager">
-        <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
-          <Host>localhost</Host>
-          <Port>5050</Port>
-        </configuration>
         <configuration default="true" type="Applet">
           <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
           <method v="2">
             <option name="Make" enabled="true" />
           </method>
+        </configuration>
+        <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+          <Host>localhost</Host>
+          <Port>5050</Port>
         </configuration>
         <configuration default="true" type="Application" factoryName="Application">
           <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -91,6 +68,7 @@
           </method>
         </configuration>
         <configuration default="true" type="JUnit" factoryName="JUnit">
+          <option name="TEST_OBJECT" value="class" />
           <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
           <option name="TEST_SEARCH_SCOPE">
             <value defaultName="moduleWithDependencies" />
@@ -100,6 +78,7 @@
           </method>
         </configuration>
         <configuration default="true" type="TestNG">
+          <option name="TEST_OBJECT" value="CLASS" />
           <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
           <option name="TEST_SEARCH_SCOPE">
             <value defaultName="moduleWithDependencies" />
@@ -126,6 +105,15 @@
           </list>
         </option>
       </component>
+      <component name="TaskManager">
+        <task active="true" id="Default" summary="Default task">
+          <created>1695684663504</created>
+          <option name="number" value="Default" />
+          <option name="presentableId" value="Default" />
+          <updated>1695684663504</updated>
+        </task>
+        <servers />
+      </component>
       <component name="TypeScriptCompiler">
         <option name="enableServiceForProjectsWithoutConfig" value="false" />
         <option name="hasOutDirectory" value="true" />
@@ -137,6 +125,12 @@
         <option name="myTodoPanelSettings">
           <TodoPanelSettings />
         </option>
+      </component>
+      <component name="WindowStateProjectService">
+        <state x="537" y="237" key="SettingsEditor" timestamp="1709920244490">
+          <screen x="0" y="44" width="2056" height="1285" />
+        </state>
+        <state x="537" y="237" key="SettingsEditor/0.44.2056.1285" timestamp="1709920244490" />
       </component>
       <component name="masterDetails">
         <states>
