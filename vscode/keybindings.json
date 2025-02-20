@@ -1,4 +1,4 @@
-// Place your key bindings in this file to override the defaultsauto[]
+// Place your key bindings in this file to override the defaults
 [
     {
         "key": "ctrl+a",
@@ -32,12 +32,9 @@
         "command": "-workbench.action.closeEditorsInGroup"
     },
     {
-        "key": "cmd+n",
-        "command": "workbench.action.quickOpen"
-    },
-    {
         "key": "cmd+e",
-        "command": "workbench.action.quickOpen"
+        "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen"
     },
     {
         "key": "shift+cmd+o",
@@ -168,5 +165,91 @@
     {
         "key": "cmd+k cmd+down",
         "command": "-workbench.action.focusBelowGroup"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "-workbench.view.scm",
+        "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "-cursorUndo",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "tab",
+        "command": "insertBestCompletion",
+        "when": "atEndOfWord && textInputFocus && !hasOtherSuggestions && !inSnippetMode && !suggestWidgetVisible && config.editor.tabCompletion == 'on' && !hasSnippetCompletions"
+    },
+    {
+        "key": "tab",
+        "command": "-insertBestCompletion",
+        "when": "atEndOfWord && textInputFocus && !hasOtherSuggestions && !inSnippetMode && !suggestWidgetVisible && config.editor.tabCompletion == 'on'"
+    },
+    {
+        "key": "tab",
+        "command": "editor.action.inlineSuggest.commit",
+        "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible && !hasSnippetCompletions"
+    },
+    {
+        "key": "tab",
+        "command": "-editor.action.inlineSuggest.commit",
+        "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "alt+l",
+        "command": "continue.focusContinueInput"
+    },
+    {
+        "key": "cmd+l",
+        "command": "-continue.focusContinueInput"
+    },
+    {
+        "key": "shift+alt+l",
+        "command": "continue.focusContinueInputWithoutClear"
+    },
+    {
+        "key": "shift+cmd+l",
+        "command": "-continue.focusContinueInputWithoutClear"
+    },
+    {
+        "key": "shift+alt+l",
+        "command": "-bookmarks.expandSelectionToNext",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+cmd+e",
+        "command": "-workbench.view.explorer",
+        "when": "viewContainer.workbench.view.explorer.enabled"
+    },
+    {
+        "key": "cmd+e",
+        "command": "workbench.action.quickOpenNavigateNextInRecentFilesPicker",
+        "when": "inQuickOpen && inRecentFilesPicker"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.quickOpenNavigateNextInRecentFilesPicker",
+        "when": "inQuickOpen && inRecentFilesPicker"
+    },
+    {
+        "key": "shift+cmd+e",
+        "command": "wizard.switch-file",
+        "when": "editorIsOpen"
+    },
+    {
+        "key": "shift+tab",
+        "command": "-wizard.switch-file",
+        "when": "editorIsOpen"
+    },
+    {
+        "key": "cmd+k",
+        "command": "-git.commitAll",
+        "when": "!inDebugMode && !operationInProgress && !terminalFocus"
+    },
+    {
+        "key": "cmd+n",
+        "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen"
     }
 ]
