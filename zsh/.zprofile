@@ -87,6 +87,10 @@ if [[ -s "$HOME/.local/bin/utils" ]]; then
   path=("$HOME/.local/bin/utils" $path)
 fi
 
+if [[ -s "$HOME/.local/bin/idea" ]]; then
+  path=("$HOME/.local/bin/idea" $path)
+fi
+
 if [[ -s "$HOME/.bin" ]]; then
   path=("$HOME/.bin" $path)
 fi
