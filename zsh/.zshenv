@@ -12,7 +12,7 @@ fi
 
 export GOPATH=$HOME/go
 # export TSC_NONPOLLING_WATCHER=true
-export NODE_TLS_REJECT_UNAUTHORIZED="0"
+# export NODE_TLS_REJECT_UNAUTHORIZED="0"
 
 if [[ -s "/usr/libexec/java_home" ]]; then
   # JAVA_HOME
@@ -28,3 +28,7 @@ if [[ -s ~/.nvm ]]; then
 fi
 
 . "$HOME/.cargo/env"
+
+if command -v fzf &> /dev/null; then
+    eval "$(fnm env --use-on-cd --shell zsh)"
+fi

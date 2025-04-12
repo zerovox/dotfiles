@@ -96,3 +96,7 @@ if [[ -s "$HOME/.bin" ]]; then
 fi
 
 export PATH
+
+if [[ -s "$HOME/.orbstack/shell/init.zsh" ]]; then
+  source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+fi

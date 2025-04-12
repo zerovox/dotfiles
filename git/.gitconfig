@@ -7,6 +7,8 @@
 	email = 933064+zerovox@users.noreply.github.com
 [includeIf "gitdir:/Volumes/git/github.palantir.build/"]
     path = /Volumes/git/github.palantir.build/.gitconfig
+[includeIf "gitdir:/Volumes/git/github.com/"]
+    path = /Volumes/git/github.com/.gitconfig
 [alias]
 	amend = commit --amend --no-edit
 	s = status

@@ -31,11 +31,11 @@
     ~/.scmbrc: scm_breeze_config/.scmbrc
     ~/Library/Application Support/Code/User/settings.json: vscode/settings.json
     ~/Library/Application Support/Code/User/keybindings.json: vscode/keybindings.json
-    ~/Library/Preferences/com.knollsoft.Rectangle.plist: rectangle/com.knollsoft.Rectangle.plist
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore: git/.gitignore
 
 - shell:
+    - [cp rectangle/com.knollsoft.Rectangle.plist ~/Library/Preferences/com.knollsoft.Rectangle.plist]
     - [git submodule update --init --recursive, Installing submodules]
     - ["git clone --recursive https://github.com/sorin-ionescu/prezto.git \"${ZDOTDIR:-$HOME}/.zprezto\" || (cd \"${ZDOTDIR:-$HOME}/.zprezto\" ; git pull)"]
 
