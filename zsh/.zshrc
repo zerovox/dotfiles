@@ -81,6 +81,27 @@ if [[ -s ~/.fzf.zsh ]]; then
     fi
 fi
 
+# Git checkpoint stash with optional message
+gcheck() {
+    if [ $# -eq 0 ]; then
+        # No message provided, create one from branch and timestamp
+        local branch=$(git branch --show-current)
+        local timestamp=$(date +"%Y-%m-%d_%H:%M:%S")
+        local message="checkpoint: ${branch}_${timestamp}"
+    else
+        # Use provided message
+        local message="checkpoint: $*"
+    fi
+    
+    git stash push -m "$message"
+    git stash apply "stash@{0}"
+}
+
+# List all checkpoint stashes
+gcheckls() {
+    git stash list | grep "checkpoint:"
+}
+
 # Source local additions
 if [[ -s ~/.zshrc-local ]]; then
   source ~/.zshrc-local

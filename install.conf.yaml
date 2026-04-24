@@ -38,6 +38,8 @@
     - [cp rectangle/com.knollsoft.Rectangle.plist ~/Library/Preferences/com.knollsoft.Rectangle.plist]
     - [git submodule update --init --recursive, Installing submodules]
     - ["git clone --recursive https://github.com/sorin-ionescu/prezto.git \"${ZDOTDIR:-$HOME}/.zprezto\" || (cd \"${ZDOTDIR:-$HOME}/.zprezto\" ; git pull)"]
+    - ["git clone https://github.com/callstack/zsh-auto-nvm-use.git \"${ZDOTDIR:-$HOME}/.zprezto/contrib/zsh-auto-nvm-use\" 2>/dev/null || true", Installing zsh-auto-nvm-use]
+    - ["echo 'source \"${0:h}/zsh-auto-nvm-use.plugin.zsh\"' > \"${ZDOTDIR:-$HOME}/.zprezto/contrib/zsh-auto-nvm-use/init.zsh\"", Creating zprezto init.zsh wrapper for zsh-auto-nvm-use]
 
 - shell:
     - "ghq get https://github.com/atomrc/kakoune-typescript.git"

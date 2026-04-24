@@ -41,7 +41,8 @@ zstyle ':prezto:load' pmodule \
   'prompt' \
   'history-substring-search' \
   'git' \
-  'fasd'
+  'fasd' \
+  'zsh-auto-nvm-use'
 
 #
 # Autosuggestions
