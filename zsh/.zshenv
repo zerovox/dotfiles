@@ -28,7 +28,3 @@ if [[ -s ~/.nvm ]]; then
 fi
 
 . "$HOME/.cargo/env"
-
-if command -v fzf &> /dev/null; then
-    eval "$(fnm env --use-on-cd --shell zsh)"
-fi

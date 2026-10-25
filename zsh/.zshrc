@@ -102,6 +102,85 @@ gcheckls() {
     git stash list | grep "checkpoint:"
 }
 
+# Print the web URL for a git remote (default: origin)
+function _git_web_url () {
+  emulate -L zsh
+  local me=${funcstack[2]:-$0} remote=${1:-origin} url host slug
+
+  if ! command git rev-parse --git-dir >/dev/null 2>&1; then
+    print -u2 "$me: not inside a Git repository"
+    return 1
+  fi
+
+  url=$(command git remote get-url "$remote" 2>/dev/null) || {
+    print -u2 "$me: no remote named '$remote'"
+    return 1
+  }
+
+  local scheme=https
+  case $url in
+    http://*|https://*)
+      [[ $url == http://* ]] && scheme=http
+      url=${url#*://}
+      host=${${url%%/*}##*@}             # drop user[:token]@, keep :port
+      slug=${url#*/}
+      ;;
+    ssh://*|git+ssh://*|git://*)
+      url=${url#*://}
+      host=${${${url%%/*}##*@}%%:*}      # drop user@ and ssh :port
+      slug=${url#*/}
+      ;;
+    *://*)
+      ;;                                 # file:// and other non-web schemes
+    [^/]*:*)
+      host=${${url%%:*}##*@}             # scp-like [user@]host:path
+      slug=${url#*:}
+      ;;
+  esac
+
+  slug=${${${slug#/}%/}%.git}
+  if [[ -z $host || -z $slug || $host == */* ]]; then
+    print -u2 "$me: can't make a web URL from '$remote' remote: $url"
+    return 1
+  fi
+
+  print -r -- "$scheme://$host/$slug"
+}
+
+# Open a GitHub compare page for the current branch
+function pr () {
+  emulate -L zsh
+  local url branch encoded= c
+
+  url=$(_git_web_url) || return
+
+  branch=$(command git symbolic-ref --quiet --short HEAD) || {
+    print -u2 "pr: HEAD is detached; check out a branch first"
+    return 1
+  }
+
+  if ! command git show-ref --verify --quiet "refs/remotes/origin/$branch"; then
+    print -u2 "pr: '$branch' isn't on origin; push it first (gpu)"
+    return 1
+  fi
+
+  # Percent-encode the branch name byte by byte, keeping '/'
+  local LC_ALL=C
+  for c in ${(s::)branch}; do
+    [[ $c == [A-Za-z0-9/._~-] ]] && encoded+=$c || encoded+=$(printf '%%%02X' "'$c")
+  done
+
+  open "$url/compare/$encoded"
+}
+
+# Open the repository's web page
+function repo () {
+  emulate -L zsh
+  local url
+  url=$(_git_web_url) || return
+  open "$url"
+}
+
 # Source local additions
 if [[ -s ~/.zshrc-local ]]; then
   source ~/.zshrc-local
