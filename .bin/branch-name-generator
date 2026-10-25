@@ -28,5 +28,5 @@ if (!skill) {
     throw new Error(`Could not find skill ${skillId} for ${pokemon.name}`);
 }
 
-const sentence = `tslatchers ${pokemon.name} used ${skill.name}`;
+const sentence = `${process.env.USER}s ${pokemon.name} used ${skill.name}`;
 console.log(sentence.replace(/\s/g, "-").toLowerCase().replace(/[^\x00-\x7F]/g, ""));
